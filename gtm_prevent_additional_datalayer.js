@@ -26,7 +26,6 @@
   var sendCampaignData = function(campaignId, integrationString) {
     var dataLayerObject = window[DATALAYER_OBJECT_NAME] || [];
     if(!sessionStorage.getItem('optimizely_fired_decisions') || sessionStorage.getItem('optimizely_fired_decisions') && !JSON.parse(sessionStorage.getItem('optimizely_fired_decisions')).includes(integrationString.variation)){
-        console.log('DATALAYER PUSH: ' + integrationString.experiment + ':' + integrationString.variation);
         dataLayerObject.push({
         'event': 'optimizely_decision_web',
         'optimizely_experiment': integrationString.experiment,
